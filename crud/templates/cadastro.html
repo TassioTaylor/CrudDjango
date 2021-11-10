@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <form  action= "{% url 'cadastrar_cliente'%}"  method="POST"> {% csrf_token %}
+    <div class="col-md-6" style="margin: 50 px; left: 50p px;">
+      <div class="col-md-5">
+        <label for="">Nome:</label>
+        <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" name="nome" >
+      </div>
+      <div class="col-md-10">
+          <label for="">Endereço:</label>
+        <input type="text" class="form-control" placeholder="Endereço" aria-label="Endereço" name="endereco">
+      </div>
+      <div class="col-md-3">
+        <label for="">Telefone:</label>
+        <input type="text" class="form-control" placeholder="Telefone" aria-label="Telefone" name="fone">
+      </div>
+      <div class="col-md-3">
+        <label for="">Data de Nascimento:</label>
+        <input type="date" class="form-control" placeholder="Data" aria-label="Data" name="data_nascimento">
+      </div>
+        <br>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+      </div>
+    </div>
+  </form>
+
+{% endblock %}

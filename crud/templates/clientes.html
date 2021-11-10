@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">nome</th>
+      <th scope="col">endereço</th>
+      <th scope="col">Fone</th>
+      <th scope="col">Data Nascimento</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for cliente in clientes %}
+    <tr>
+      <th scope="row">{{ cliente.nome }}</th>
+      <td>{{ cliente.endereco }}</td>
+      <td>{{ cliente.fone }}</td>
+      <td type="date-time">{{ cliente.data_nascimento }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
