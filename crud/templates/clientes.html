@@ -13,10 +13,13 @@
   <tbody>
   {% for cliente in clientes %}
     <tr>
-      <th scope="row">{{ cliente.nome }}</th>
+      <th scope="row" >{{ cliente.nome }}</th>
       <td>{{ cliente.endereco }}</td>
       <td>{{ cliente.fone }}</td>
-      <td type="date-time">{{ cliente.data_nascimento }}</td>
+      <td type="date">{{ cliente.get_data_nascimento  }}</td>
+      <td><input type="number" name="id_cliente" value="{{ cliente.id }}" hidden></td>
+      <td><a href="/cadastro_cliente/?id={{ cliente.id }}" type="button" class="btn btn-secondary">Editar</a></td>
+      <td><a href="/excluir/{{ cliente.id }}/" type="button" class="btn btn-danger">Exlcuir</a></td>
     </tr>
   {% endfor %}
   </tbody>

@@ -2,6 +2,7 @@ from django.db import models
 
 
 # Create your models here.
+from core import settings
 
 
 class Clientes(models.Model):
@@ -12,3 +13,10 @@ class Clientes(models.Model):
 
     def __str__(self):
         return self.nome
+
+    def get_data_nascimento(self):
+        return self.data_nascimento.strftime('%d/%m/%Y')
+
+    def get_input_data_nascimento(self):
+        return self.data_nascimento.strftime('%Y-%m-%d')
+

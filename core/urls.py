@@ -20,7 +20,9 @@ from crud import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cadastro_cliente/', views.cadastro_cliente),
+    path('', views.clientes),
+    path('cadastro_cliente/', views.cadastro_cliente, name='cadastro_cliente'),
     path('cadastrar_cliente/', views.cadastrar_cliente, name='cadastrar_cliente'),
     path('clientes/', views.clientes, name='clientes'),
+    path('excluir/<int:id>/', views.excluir, name='excluir'),
 ]
